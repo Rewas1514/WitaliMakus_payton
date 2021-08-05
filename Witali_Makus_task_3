@@ -1,0 +1,14 @@
+duration = int(input('Введите промежуток времени в секундах: '))
+second_in_minut = 60  # секунд в минуте
+second_in_hour = 3600 # секунд в часа
+minut_in_hour = 60   # минут в часе
+
+if duration < 3600:
+    minutes = duration // 60  # нахожу количество минут
+    second = duration % 60  # нахожу количество секунд
+    print('{} минут {} секунд'.format(minutes, second))  # вывод данных
+else:
+    hour = duration // second_in_hour  # нахожу количество часов
+    minuts = (duration - second_in_hour * hour) // 60  # нахожу количество минут
+    rest_seconds = (duration - (hour*second_in_hour + minuts * second_in_minut))  # нахожу количество секунд
+    print('{}час {}минут {}секунд'.format(hour, minuts, rest_seconds))
